@@ -25,6 +25,9 @@ $fa-font-path: './webfonts';
 body{
     font-family: $main-font;
 }
+section{
+    margin-bottom: 5rem;
+}
 img{
     max-width: 100%;
 }

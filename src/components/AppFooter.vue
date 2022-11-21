@@ -40,12 +40,11 @@ footer{
     width: 100%;
     padding-top: 3rem;
     padding-bottom: 4rem;
-    position: fixed;
-    bottom: 0;
+    // position: fixed;
+    // bottom: 0;
     @include dflex-center;
     font-size: .85rem;
     margin: 0 auto;
-
 
     .logo{
         text-align: center;
