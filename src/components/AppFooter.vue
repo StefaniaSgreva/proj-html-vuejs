@@ -38,11 +38,14 @@ import FooterInfos from './FooterInfos.vue';
 footer{
     background-color: $bg-color-mint;
     width: 100%;
-    height: 150px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
     position: fixed;
     bottom: 0;
     @include dflex-center;
     font-size: .85rem;
+    margin: 0 auto;
+
 
     .logo{
         text-align: center;
@@ -59,7 +62,6 @@ footer{
         line-height: 2rem;
         
         div:nth-child(2){
-        //    border: 1px solid red;
            padding-left: 2rem;
         }
 
