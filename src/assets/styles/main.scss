@@ -28,6 +28,10 @@ body{
 section{
     margin-bottom: 5rem;
 }
+h2{
+    font-size: 3rem;
+    font-weight: lighter;
+}
 img{
     max-width: 100%;
 }
@@ -38,6 +42,11 @@ ul{
         text-decoration: none;
         color: $text-color;
     }
+}
+.container{
+    width: 60%;
+    margin: 0 auto;
+    // border: 1px solid red;
 }
 .font-italic{
     font-family: $italic-font;

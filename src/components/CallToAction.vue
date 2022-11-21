@@ -26,10 +26,7 @@
     text-align: center;
     @include dflex-center-col;
 
-    h2{
-        font-size: 3rem;
-        font-weight: lighter;
-    }
+   
     p{
         width: 1200px;
         line-height: 2rem;
