@@ -60,11 +60,7 @@ header{
                     border-bottom: 4px solid $bg-color-pink;
                     // padding: 0 3px;
                 }
-
-            }
-           
-           
-            
+            }      
     }
 
 }
