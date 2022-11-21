@@ -15,6 +15,11 @@ import AppFooter from './components/AppFooter.vue';
     components: { 
       AppHeader,
       AppFooter 
+    },
+    data(){
+      return{
+        
+      }
     }
 }
 </script>

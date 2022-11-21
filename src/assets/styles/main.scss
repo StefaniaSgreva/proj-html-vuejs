@@ -20,6 +20,20 @@ $fa-font-path: './webfonts';
     padding: 0;
     box-sizing: border-box;
 }
+.debug{
+    border: 1px solid red;
+}
 body{
     font-family: $main-font;
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style: none;
+
+    li a{
+        text-decoration: none;
+        color: $text-color;
+    }
 }
