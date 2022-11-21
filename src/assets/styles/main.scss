@@ -39,3 +39,15 @@ ul{
         color: $text-color;
     }
 }
+.font-italic{
+    font-family: $italic-font;
+    font-weight: 900;
+}
+.btn{
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: .10rem;
+    border: none;
+    color: $text-color;
+}
