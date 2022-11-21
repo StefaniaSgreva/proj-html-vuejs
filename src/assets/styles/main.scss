@@ -6,8 +6,20 @@ $fa-font-path: './webfonts';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
 @import '@fortawesome/fontawesome-free/scss/brands.scss';
 
+@import '@fontsource/amiko/index.css'; 
+@import '@fontsource/amiko/400.css';
+@import '@fontsource/amiko/600.css';
+@import '@fontsource/amiko/700.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font-family: 'Playfair Display', serif;  
+    
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    font-family: $main-font;
 }

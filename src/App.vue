@@ -3,7 +3,7 @@
   <main>
 
   </main>
-  <AppFooterVue/>
+  <AppFooter/>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ import AppFooter from './components/AppFooter.vue';
     components: { 
       AppHeader,
       AppFooter 
-    },
+    }
 }
 </script>
 
