@@ -90,6 +90,12 @@ export default {
     z-index: 10;
     opacity: 0;
     transition: opacity 450ms ease;
+    cursor: pointer;
+    transition: transform 450ms;
+
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 
   .scrolled{

@@ -6,7 +6,7 @@
         <nav>
             <ul>
                 <li v-for="(link,index) in headerNav" :key="index">
-                    <a href="link.url" :class="{'active' : link.current}">{{link.text}}</a>    
+                    <a href="link.url" :class="{'active' : link.current}" class="strike">{{link.text}}</a>    
                 </li>
                 <li><a href="#"><img src="../assets/svg/svg-1.svg" alt="menu"></a></li>
             </ul>
@@ -51,19 +51,33 @@ header{
                 text-transform: uppercase;
                 margin-left: 2.5rem;
                 letter-spacing: .10rem;
-                // border: 1px solid red;
-             
-
-                &.active,
-                &:hover{
-                    // border: 1px solid red;
-                    // border-bottom: 4px solid $bg-color-pink;
-                    // padding: 0 3px;
-                    border-bottom-width:0.4em;
-                    border-bottom-style:solid;
-                    border-bottom-color:$bg-color-pink;
-                }
-            }      
+                display: inline-block;
+                position: relative;
+            }
+            .strike::after{
+                content: '';
+                display: block;
+                width: 0%;
+                height: 5px;
+                background: $bg-color-pink;
+                position: absolute;
+                bottom: 20%;
+                z-index: -1;
+                transition: 400ms ease-in-out;
+            }           
+            .strike:hover::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 5px;
+                background: $bg-color-pink;
+                position: absolute;
+                bottom: 20%;
+                z-index: -1;
+            } 
+            .strike.active::after{
+                width: 100%;
+            }
     }
 
 }
