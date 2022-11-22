@@ -4,8 +4,8 @@
             <button class="handle left-handle"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="slide">
                 <div class="text">
-                <h1>Devotion that<br>never <span class="font-italic">ends</span></h1>
-                <p>Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</p>
+                    <h1>Devotion that<br>never <span class="font-italic">ends</span></h1>
+                    <p>Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</p>
                     <button class="btn">Read More</button>
                 </div>
                 <div class="img">
@@ -92,6 +92,33 @@
                     padding: 1rem 2rem;
                     background-color: transparent;
                     border: 3px solid $border-color-pink;
+                    cursor: pointer;
+                    position: relative;
+
+                    &:hover{
+                        color: $color-white;
+                    }
+
+                }
+                button::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $border-color-pink;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 200ms ease-in;
+                    z-index: -1;
+
+
+                }
+                button:hover::after{
+                    transform: scaleX(1);
+                    transform-origin: left;
+
                 }
 
                 }
