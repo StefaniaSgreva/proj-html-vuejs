@@ -36,9 +36,33 @@
     button{
         padding: .85rem 2.8rem;
         background-color: rgba($color: #c0e1cf, $alpha: 0.6);
-        
-        
+        cursor: pointer;
+        position: relative;
+
+        &:hover{
+            color: $color-white;
+            background-color: rgba($color: #f3d0c7, $alpha: 0.6);
+
+        }
     }
+    // button::after{
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba($color: #f3d0c7, $alpha: 0.6);
+    //     transform: scaleX(0);
+    //     transform-origin: right;
+    //     transition: transform 200ms ease-in;
+    //     z-index: -1;
+    // }
+    // button:hover::after{
+    //     transform: scaleX(1);
+    //     transform-origin: left;
+    // }
+    
 }
 
 </style>

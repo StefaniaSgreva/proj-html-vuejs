@@ -60,6 +60,10 @@ footer{
         .social-links{
             text-align: center;
             line-height: 2rem;
+
+            div{
+                font-size: .95rem;
+            }
             
             div:nth-child(2){
             padding-left: 2rem;
@@ -69,6 +73,10 @@ footer{
                 color: $text-color;
                 padding-right: 1.8rem;
                 font-size: 1rem;
+                transition: color 450ms ease;
+            }
+            i:hover{
+                color: $color-white;
             }
         }
     }
