@@ -60,22 +60,22 @@ const footerMenu = [
 const process = [
     {
         src: "../assets/images/",
-        titol: "First there is an idea",
+        title: "First there is an idea",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
         src: "../assets/images/",
-        titol: "Then we talk about",
+        title: "Then we talk about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
         src: "../assets/images/",
-        titol: "And we think about",
+        title: "And we think about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
         src: "../assets/images/",
-        titol: "So we draw along",
+        title: "So we draw along",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     }
 ];

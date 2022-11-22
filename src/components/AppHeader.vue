@@ -51,12 +51,17 @@ header{
                 text-transform: uppercase;
                 margin-left: 2.5rem;
                 letter-spacing: .10rem;
+                // border: 1px solid red;
+             
 
                 &.active,
                 &:hover{
                     // border: 1px solid red;
-                    border-bottom: 4px solid $bg-color-pink;
+                    // border-bottom: 4px solid $bg-color-pink;
                     // padding: 0 3px;
+                    border-bottom-width:0.4em;
+                    border-bottom-style:solid;
+                    border-bottom-color:$bg-color-pink;
                 }
             }      
     }

@@ -7,36 +7,31 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="fit-content" height="126" viewBox="0 0 1095.3 126"><path d="M2.3 58s70 50.4 177 52c101.5 1.5 145.1-20.7 170-31.8 5.9-2.6 38.9-20.5 38.9-20.5 3.8-2.8 72.7-43.4 159.4-43.7s132.1 29.3 162.3 45.4c0 0 26.6 14.5 36.7 19.3 2.9 1.4 64.7 29.3 169.7 30.3s166-46.3 178-50" fill="none" stroke-width="2" stroke="#f1cfc6"/></svg>
                 </div>
                 <div class="row">
-                    <div class="coll">
+                    <ProcessComponent v-for="(item,index) in workProcess" :key="index" :obj="item"/>
+                    <!-- <div class="coll">
                         <div class="img"></div>
                         <h3>First there is an idea</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Accusantium, cumque asperiores!</p>
-                    </div>
-                    <div class="coll">
-                        <div class="img"></div>
-                        <h3>First there is an idea</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Accusantium, cumque asperiores!</p>
-                    </div>
-                    <div class="coll">
-                        <div class="img"></div>
-                        <h3>First there is an idea</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Accusantium, cumque asperiores!</p>
-                    </div>
-                    <div class="coll">
-                        <div class="img"></div>
-                        <h3>First there is an idea</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Accusantium, cumque asperiores!</p>
-                    </div>
-                </div>
+                    </div> -->
+                </div> 
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import {process} from '../data/arrays';
+import ProcessComponent from './ProcessComponent.vue';
+
     export default {
-        name: 'AppWorkingProcess'
-    }
+    name: "AppWorkingProcess",
+    components: { ProcessComponent },
+    data(){
+            return {
+                workProcess: process,
+            }
+        }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -57,35 +52,10 @@
             }
 
             .row{
-            width: 100%;
-            @include dflex-center;
-            margin-top: -11rem;
-
-
-            .coll{
-                flex-basis: calc(100% / 4);
-                padding: 2rem 0;
-
-                .img{
-                    background-color: aqua;
-                    width: 150px;
-                    height: 150px;
-                    border-radius: 50%;
-                    margin: 1.5rem auto;
-                }
-
-                h3{
-                    font-weight: 600;
-                    margin-bottom: .75rem;
-                }
-
-                p{
-                    font-size: .75rem;
-                    color: $text-color-gray;
-                    line-height: 1.8;
-                }
+                width: 100%;
+                @include dflex-center;
+                margin-top: -11rem;
             }
-        }
         }
         
     }
