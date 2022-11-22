@@ -36,11 +36,8 @@ header{
     margin: 0 auto;
     height: 60px;
     @include dflex-between;
-    // background-color: antiquewhite;
+    padding-top: 2rem;
 
-    .header-logo{
-        width: 90%;
-    }
     ul{
         display: flex;
         justify-content: center;
@@ -52,7 +49,8 @@ header{
         
             li a{
                 text-transform: uppercase;
-                margin-right: 2.5rem;
+                margin-left: 2.5rem;
+                letter-spacing: .10rem;
 
                 &.active,
                 &:hover{
