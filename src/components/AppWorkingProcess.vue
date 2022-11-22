@@ -34,7 +34,7 @@ import ProcessComponent from './ProcessComponent.vue';
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
 

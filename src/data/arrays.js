@@ -59,39 +59,35 @@ const footerMenu = [
 ];
 const process = [
     {
-        src: "../assets/images/",
         title: "First there is an idea",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
-        src: "../assets/images/",
         title: "Then we talk about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
-        src: "../assets/images/",
         title: "And we think about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
-        src: "../assets/images/",
         title: "So we draw along",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     }
 ];
 const blogPosts = [
     {
-        src: "../assets/images/h-2-blog-img-1.jpg",
+        imageName: "h-2-blog-img-1",
         title: "This way, loves: a detailed guide through new design",
         credits: "by Emily Fields"
     },
     {
-        src: "../assets/images/h-2-blog-img-2.jpg",
+        imageName: "h-2-blog-img-2",
         title: "I try to give people a different way of looking art",
         credits: "by Emily Fields"
     },
     {
-        src: "../assets/images/h-2-blog-img-3.jpg",
+        imageName: "h-2-blog-img-3",
         title: "Introduce Richard Laperrière of those amazing features",
         credits: "by Emily Fields"
     }
