@@ -78,6 +78,13 @@ header{
             .strike.active::after{
                 width: 100%;
             }
+            // a img{
+            //     transition: transform 450ms ease;
+            // }
+            // a img:hover{
+            //     transform: scale(1.1);
+                
+            // }
     }
 
 }

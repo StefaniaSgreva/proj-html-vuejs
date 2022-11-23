@@ -23,7 +23,7 @@ ul{
     li{
         cursor: pointer;
         max-width: 100%;
-        font-size: .95rem;
+        font-size: .85rem;
         span{
                
                width: 100%;

@@ -76,5 +76,12 @@ ul{
     padding: .30rem .65rem;
     border-radius: 50%;
     text-align: center;
+    transition: transform 450ms ease;
+    
+    &:hover{
+        transform: scale(1.1);
+        background-color: $bg-color-mint;
+    }
+
 }
 
