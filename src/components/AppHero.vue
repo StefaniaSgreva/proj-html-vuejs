@@ -2,8 +2,9 @@
     <section id="hero">
         <div class="hero-container debug">
             <button class="handle left-handle" @click="scrollLeft()"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="carousel" ref="scroll">
-                <div class="carousel-item"  v-for="(slide, index) in slides" :key="index">
+            <div class="carousel" ref="scroll" v-for="(slide, index) in slides" :key="index" 
+                :current-slide="currentSlide" :index="index">
+                <div class="carousel-item"  v-show="currentSlide === index">
                     <div class="text">
                         <h1>{{slide.title1}}<br>{{slide.title2}} <span class="font-italic">{{slide.titleItalic}}</span></h1>
                         <p>{{slide.text}}</p>
@@ -29,6 +30,7 @@
         name: 'AppHero',
         data(){
             return{
+                currentSlide: 0,
                 slides:[
                     {
                         image: '/img/Hero-imh-1.png',
@@ -81,20 +83,26 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    // height: 520px;
+    width: 90%;
+    margin: 0 auto;
+    height: 520px;
+    overflow: hidden;
     position: relative;
+   
 
     .carousel{
-        display: flex;
-        width: 90%;
-        
-
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
         .carousel-item{
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            height: 520px;
+            height: 100%;
+           
 
 
             .text{
