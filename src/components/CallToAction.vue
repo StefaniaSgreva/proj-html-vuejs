@@ -37,14 +37,14 @@
     }
     button{
         padding: 1.2rem 4rem;
-        background-color: rgba($color: #c0e1cf, $alpha: 0.6);
+        background-color: rgba($color: #f77b72, $alpha: 0.6);
         cursor: pointer;
         position: relative;
       
 
         &:hover{
             color: $color-white;
-            background-color: rgba($color: #f3d0c7, $alpha: 0.6);
+            background-color: $bg-color-pink;
 
         }
     }

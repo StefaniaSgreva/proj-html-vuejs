@@ -1,31 +1,71 @@
 <template>
     <section id="hero">
         <div class="hero-container debug">
-            <button class="handle left-handle"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="slide">
-                <div class="text">
-                    <h1>Devotion that<br>never <span class="font-italic">ends</span></h1>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</p>
-                    <button class="btn">Read More</button>
-                </div>
-                <div class="img debug">
-                    <img src="../assets/images/Hero-imh-1.png" alt="">
-                </div>
-              
-                <div class="dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+            <button class="handle left-handle" @click="scrollLeft()"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel" ref="scroll">
+                <div class="carousel-item"  v-for="(slide, index) in slides" :key="index">
+                    <div class="text">
+                        <h1>{{slide.title1}}<br>{{slide.title2}} <span class="font-italic">{{slide.titleItalic}}</span></h1>
+                        <p>{{slide.text}}</p>
+                        <button class="btn">Read More</button>
+                    </div>
+                    <div class="img">
+                        <img :src="slide.image" alt="hero slide">
+                    </div>
                 </div>
             </div>
-            <button class="handle right-handle"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <button class="handle right-handle" @click="scrollRight()"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </section>
 </template>
 
 <script>
     export default {
-        name: 'AppHero'
+        name: 'AppHero',
+        data(){
+            return{
+                slides:[
+                    {
+                        image: '/img/Hero-imh-1.png',
+                        title1: 'Devotion that',
+                        title2: 'never',
+                        titleItalic: 'ends',
+                        text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
+                    },
+                    // {
+                    //     image: '/img/Hero-imh-1.png',
+                    //     title1: 'Projects made',
+                    //     title2: 'with',
+                    //     titleItalic: 'love',
+                    //     text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
+                    // },
+                    // {
+                    //     image: '/img/Hero-imh-1.png',
+                    //     title1: 'Our new folio',
+                    //     title2: 'full of',
+                    //     titleItalic: 'joy',
+                    //     text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
+                    // }
+                ]
+            }
+        },
+        methods:{
+            scrollLeft(){
+                this.$refs['scroll'].scrollLeft -= 1000;
+            },
+            scrollRight() {
+                this.$refs['scroll'].scrollLeft += 1000;
+            }
+
+        },
+        mounted(){
+            
+        }
     }
 </script>
 
@@ -33,62 +73,54 @@
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
 
-    #hero{
-        display: flex;
-        justify-content: flex-end;
-        position: relative;
-        margin: 0 2rem;
-        .hero-container{
-            width: 90%;
-            height: 425px;
-            margin: 5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            
-           
-            .left-handle{
-                position: absolute;
-                left: 0;
-                top: 42%;
-            }
-            .right-handle{
-                position: absolute;
-                right: 0;
-                top: 42%;
-            }
+#hero{
+    margin: 2rem 0;
+}
+.hero-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    // height: 520px;
+    position: relative;
 
-            .slide{
-                display: flex;
-                // flex-wrap: wrap;
-                justify-content: flex-end;
-                align-items: center;
+    .carousel{
+        display: flex;
+        width: 90%;
+        
+
+
+        .carousel-item{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 520px;
+
+
+            .text{
+                width: 50%;
+                border: 2px solid green;
                 height: 100%;
-                position: relative;
-                .text{
-                    width: 50%;
-                    height: 100%;
-                    // border: 1px solid red;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: center;
-                    padding-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
 
                     h1{
                         font-size: 4.5rem;
                         font-weight: 300;
-                        line-height: 4rem;
+                        line-height: 4.5rem;
                     }
 
                     p{
                         color: $text-color-gray;
-                        line-height: 1.5rem;
-                        margin: 1.5rem 0;
+                        line-height: 1.8rem;
+                        margin: 1.8rem 0;
                         font-size: 1.2rem;
+                        max-width: 580px;
                     }
                     button{
-                        margin-top: 1rem;
+                        margin-top: .55rem;
                         padding: 1.25rem 2.2rem;
                         background-color: transparent;
                         border: 3px solid $border-color-pink;
@@ -121,38 +153,43 @@
                         transform-origin: left;
 
                     }
-
-                }
-                .img{
-                    // border: 1px solid red;
-                    width: 50%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;  
-
-                    img{
-                        transform: scale(1.3);
-                        padding-left: 2rem;
-                    }
-                }
-                .dots{
-                    // border: 1px solid red;
-                    position: absolute;
-                    bottom: -3rem;
-                    left: 40%;
-                    display: flex;
-                }
-                .dot{
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background-color: $bg-color-pink;
-                        margin-right: 1.5rem;
-                   }
             }
-           
+
+            .img{
+                width: 50%;
+                border: 2px solid blue;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    width: 100%;
+                }
+
+            }
+
         }
     }
+}
+.handle{
+    cursor: pointer;
+}
+.dots{
+    position: absolute;
+    bottom: 0;
+    left: 47%;
+    display: flex;
+    .dot{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $bg-color-pink;
+        margin-right: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+    
 
 </style>

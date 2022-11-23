@@ -82,8 +82,8 @@
                
                 width: 100%;
                 background-image: linear-gradient(to bottom,
-                 rgba(192,255,207,0) 60%,
-                 rgba(192,255,207,.5) 40%,
+                 rgba(247,123,114,0) 60%,
+                 rgba(247,123,114,.5) 40%,
                  );
                  background-size: 0 100%;
                  background-repeat: no-repeat;
