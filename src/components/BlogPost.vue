@@ -1,12 +1,15 @@
 <template>
     <div class="card">
         <div class="date">
+            <img src="../assets/images/bandierina.png" alt="decorative flag">
             <div class="day font-italic">07</div>
             <div class="year">May ' 19'</div>
         </div>
-        <img :src="getImageURL(`h-2-blog-img-1.jpg`)" alt="blog post image">
-        <!-- <img :src="`/images/${ obj.imageName }.jpeg`" alt="blog post image"> -->
-        <h3>{{obj.title}}</h3>
+        <!-- <img :src="getImageURL(`h-2-blog-img-1.jpg`)" alt="blog post image"> -->
+        <div class="blog-img-cont">
+             <img :src="obj.img" alt="blog post image">
+        </div>
+        <h4><span>{{obj.title}}</span></h4>
         <div class="credits font-italic">{{obj.credits}}</div>
     </div>
 </template>
@@ -18,12 +21,12 @@
            
             'obj'
         ],
-        methods:{
-            getImageURL: function (imgPath) {
-                return new URL(`../assets/images/${imgPath}`, import.meta.url).href;
-                }           
+        // methods:{
+        //     getImageURL: function (imgPath) {
+        //         return new URL(`../assets/images/${imgPath}`, import.meta.url).href;
+        //         }           
 
-        }
+        // }
     }
 </script>
 
@@ -36,16 +39,21 @@
         position: relative;
             .date{
                 height: 70px;
-                width: 60px;
-                background-color: red;
+                width: 65px;
+                // background-color: $bg-color-mint;
                 position: absolute;
                 top: -1rem;
                 left: 1.8rem;
+                z-index: 1;
 
+                img{
+                    // margin-top: 5rem;
+                    z-index: -1;
+                }
                 .day{
                     font-size: 2rem;
                     text-align: center;
-                    margin-top: -.35rem;
+                    margin-top: -5.2rem;
                 }
                 .year{
                     font-size: .55rem;
@@ -55,16 +63,46 @@
                     padding-top: .55rem;
                 }
             }
+            .blog-img-cont{
+                overflow: hidden;
+                height: 300px;
 
-            h3{
-                font-weight: 400;
-                font-size: 1.3rem;
-                margin: 1rem 0;
+
+                img{
+                    transition: transform 450ms ease;
+                }
+
+                img:hover{
+                    transform: scale(1.05);
+                }
             }
 
-            .credits{
-                font-size: .85rem;
-                font-weight: 500;
+            h4{
+                max-width: 100%;
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin: 1rem 0;
+                padding-top: .75rem;
+                cursor: pointer;
+            span{
+               
+                width: 100%;
+                background-image: linear-gradient(to bottom,
+                 rgba(192,255,207,0) 60%,
+                 rgba(192,255,207,.5) 40%,
+                 );
+                 background-size: 0 100%;
+                 background-repeat: no-repeat;
+                 transition: 450ms linear;
+            }
+            span:hover{
+                background-size: 100% 100%;
+            }
+
+           }
+           .credits{
+                font-size: 1rem;
+                font-weight: 200;
             }
     }
 </style>

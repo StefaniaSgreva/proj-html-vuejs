@@ -60,37 +60,31 @@
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
-
-    #portfolio{
+    .port-container{
         width: 100%;
-        
-        .port-container{
-         width: 100%;
 
-           .col{
-                 @include dflex-center;
-                  
 
-                .box{
-                    width: calc(100% / 3);
-                    height: 665px;
-                    position: relative;
-                    cursor: pointer;
-                    overflow: hidden;
+        .col{
+            // width: calc(100% / 3.33);
+           @include dflex-between;
+               
+            .box{
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
 
-                   img{
-                    height: auto;
-                   }
-                   h4{
-                        font-weight: 500;
-                        font-size: 1.6rem;
-                        padding-bottom: .55rem;
-                        opacity: 0;
-                        transition: 1s ease-in;
-
-                   }
-                   
-                   .content{
+                img{
+                    transform: scale(1.05);
+                }
+                h4{
+                    font-weight: 500;
+                    font-size: 1.6rem;
+                    padding-bottom: .55rem;
+                    opacity: 0;
+                    transition: 1s ease-in;
+                }
+                
+                .content{
                     background-color: $bg-color-white ;
                     padding: 1.5rem;
                     padding-bottom: 2.8rem;
@@ -98,27 +92,29 @@
                     top: 42%;
                     left: -100%;
                     transition-duration: 0.5s;
-                   }
+                    opacity: 0;
                 }
-                .box:hover .content{
-                     left: 0;
-                }
-                .font-italic{
-                            font-size: 1rem;
-                            font-weight: 200;
-                            position: absolute;
-                            top: 51%;
-                            left: -100%;
-                            transition-duration: 0.7s;
-                            z-index: 1;
-                }
-                .box:hover .font-italic{
-                    left: 1.5rem;
-                }
-                .box:hover h4{
+            }
+            .box:hover .content{
+                    left: 0;
                     opacity: 1;
-                }
-           }
+            }
+            .font-italic{
+                        font-size: 1rem;
+                        font-weight: 200;
+                        position: absolute;
+                        top: 51%;
+                        left: -100%;
+                        transition-duration: 0.7s;
+                        z-index: 1;
+            }
+            .box:hover .font-italic{
+                left: 1.5rem;
+            }
+            .box:hover h4{
+                opacity: 1;
+            }
         }
     }
+    
 </style>

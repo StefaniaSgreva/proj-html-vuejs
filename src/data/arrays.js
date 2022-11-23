@@ -77,17 +77,17 @@ const process = [
 ];
 const blogPosts = [
     {
-        // num: "1",
+        img: "/img/h-2-blog-img-1.jpg",
         title: "This way, loves: a detailed guide through new design",
         credits: "by Emily Fields"
     },
     {
-        // num: "2",
+        img: "/img/h-2-blog-img-2.jpg",
         title: "I try to give people a different way of looking art",
         credits: "by Emily Fields"
     },
     {
-        // num: "3",
+        img: "/img/h-2-blog-img-3.jpg",
         title: "Introduce Richard Laperrière of those amazing features",
         credits: "by Emily Fields"
     }
