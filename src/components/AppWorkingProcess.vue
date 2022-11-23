@@ -40,6 +40,8 @@ import ProcessComponent from './ProcessComponent.vue';
 
     #process{
         text-align: center;
+        margin-top: 6.5rem;
+        margin-bottom: 6.5rem;
 
        
         .box{

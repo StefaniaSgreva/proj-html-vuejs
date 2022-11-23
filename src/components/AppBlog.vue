@@ -29,6 +29,9 @@ import BlogPost from './BlogPost.vue';
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
 
+#blog{
+    padding: 4.5rem 0;
+}
 .box{
     width: 100%;
     .row{

@@ -18,7 +18,7 @@
 
 #call-to-action{
     width: 100%;
-    height: 450px;
+    height: 610px;
     background-image: url(../assets/images/h-2-background-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,16 +28,19 @@
 
    
     p{
-        width: 1200px;
+        width: 95%;
+        font-size: 1.25rem;
         line-height: 2rem;
         color: $text-color-gray;
-        padding: 1.5rem 0;
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
     }
     button{
-        padding: .85rem 2.8rem;
+        padding: 1.2rem 4rem;
         background-color: rgba($color: #c0e1cf, $alpha: 0.6);
         cursor: pointer;
         position: relative;
+      
 
         &:hover{
             color: $color-white;

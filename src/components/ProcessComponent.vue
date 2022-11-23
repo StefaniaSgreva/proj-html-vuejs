@@ -20,13 +20,20 @@
 .col{
     flex-basis: calc(100% / 4);
     padding: 2rem .25rem;
+   
 
         img{
             margin: 1.5rem auto;
+           width: 165px;
+        }
+        h3{
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
         }
         
         p{
-            font-size: .85rem;
+            font-size: 1rem;
         }
 
 }

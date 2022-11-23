@@ -28,7 +28,7 @@ section{
 }
 h2{
     font-size: 4rem;
-    font-weight: lighter;
+    font-weight: 400;
 }
 h3{
     font-size: 1.5rem;
@@ -51,7 +51,7 @@ ul{
     }
 }
 .container{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     // border: 1px solid red;
 }
@@ -62,8 +62,8 @@ ul{
 .btn{
     text-transform: uppercase;
     font-family: inherit;
-    font-weight: 600;
-    letter-spacing: .10rem;
+    font-weight: 700;
+    letter-spacing: .20rem;
     border: none;
     color: $text-color;
 }

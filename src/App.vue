@@ -85,7 +85,7 @@ export default {
     padding: .65rem 1rem;
     background-color: $bg-color-mint;
     position: fixed;
-    bottom: 2rem;
+    bottom: 1.5rem;
     right: 1.5rem;
     z-index: 10;
     opacity: 0;

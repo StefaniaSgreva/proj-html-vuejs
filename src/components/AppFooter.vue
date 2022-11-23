@@ -41,8 +41,8 @@ import FooterInfos from './FooterInfos.vue';
 footer{
     background-color: $bg-color-mint;
     width: 100%;
-    padding-top: 3rem;
-    padding-bottom: 4rem;
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
     // position: fixed;
     // bottom: 0;
   

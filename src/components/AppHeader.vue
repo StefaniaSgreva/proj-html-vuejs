@@ -36,20 +36,20 @@ header{
     margin: 0 auto;
     height: 60px;
     @include dflex-between;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
 
     ul{
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: .85rem;
-        font-weight: 600;
+        font-weight: 700;
 
 
         
             li a{
                 text-transform: uppercase;
-                margin-left: 2.5rem;
+                margin-left: 3rem;
                 letter-spacing: .10rem;
                 display: inline-block;
                 position: relative;
@@ -58,10 +58,10 @@ header{
                 content: '';
                 display: block;
                 width: 0%;
-                height: 5px;
+                height: 6px;
                 background: $bg-color-pink;
                 position: absolute;
-                bottom: 20%;
+                bottom: 0;
                 z-index: -1;
                 transition: 400ms ease-in-out;
             }           
@@ -69,10 +69,10 @@ header{
                 content: '';
                 display: block;
                 width: 100%;
-                height: 5px;
+                height: 6px;
                 background: $bg-color-pink;
                 position: absolute;
-                bottom: 20%;
+                bottom: 0;
                 z-index: -1;
             } 
             .strike.active::after{

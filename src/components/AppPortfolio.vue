@@ -60,6 +60,8 @@
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
+
+
     .port-container{
         width: 100%;
 
@@ -103,7 +105,7 @@
                         font-size: 1rem;
                         font-weight: 200;
                         position: absolute;
-                        top: 51%;
+                        top: 55%;
                         left: -100%;
                         transition-duration: 0.7s;
                         z-index: 1;
