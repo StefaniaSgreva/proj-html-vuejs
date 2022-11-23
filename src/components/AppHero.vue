@@ -37,20 +37,20 @@
                         titleItalic: 'ends',
                         text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
                     },
-                    {
-                        image: '/img/Hero-imh-1.png',
-                        title1: 'Projects made',
-                        title2: 'with',
-                        titleItalic: 'love',
-                        text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
-                    },
-                    {
-                        image: '/img/Hero-imh-1.png',
-                        title1: 'Our new folio',
-                        title2: 'full of',
-                        titleItalic: 'joy',
-                        text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
-                    }
+                    // {
+                    //     image: '/img/Hero-imh-1.png',
+                    //     title1: 'Projects made',
+                    //     title2: 'with',
+                    //     titleItalic: 'love',
+                    //     text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
+                    // },
+                    // {
+                    //     image: '/img/Hero-imh-1.png',
+                    //     title1: 'Our new folio',
+                    //     title2: 'full of',
+                    //     titleItalic: 'joy',
+                    //     text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
+                    // }
                 ]
             }
         },
