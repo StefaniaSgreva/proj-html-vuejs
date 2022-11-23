@@ -24,7 +24,7 @@
 
         img{
             margin: 1.5rem auto;
-           width: 165px;
+            width: 160px;
         }
         h3{
             font-size: 1.5rem;
@@ -34,6 +34,8 @@
         
         p{
             font-size: 1rem;
+            width: 300px;
+            margin: auto;
         }
 
 }

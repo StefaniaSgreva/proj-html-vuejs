@@ -73,6 +73,7 @@
 
             h4{
                 max-width: 500px;
+                width: 100%;
                 font-size: 1.5rem;
                 font-weight: 400;
                 margin: 1rem 0;

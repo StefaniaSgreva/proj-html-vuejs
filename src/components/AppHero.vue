@@ -142,7 +142,7 @@
     position: relative;
     width: 90%;
     margin: 0 auto;
-    height: 520px;
+    height: 620px;
     overflow: hidden;
     position: relative;
    
@@ -170,11 +170,12 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
+                padding-left: 10rem;
 
                     h1{
-                        font-size: 4.5rem;
+                        font-size: 5.5rem;
                         font-weight: 300;
-                        line-height: 4.5rem;
+                        line-height: 5.8rem;
                     }
 
                     p{
@@ -189,16 +190,12 @@
 
             .img{
                 width: 50%;
+                height: 520px;
                 // border: 2px solid blue;
                 height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                img{
-                    width: 100%;
-                }
-
             }
 
         }

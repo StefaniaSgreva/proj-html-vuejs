@@ -105,7 +105,7 @@
                         font-size: 1rem;
                         font-weight: 200;
                         position: absolute;
-                        top: 55%;
+                        top: 51%;
                         left: -100%;
                         transition-duration: 0.7s;
                         z-index: 1;

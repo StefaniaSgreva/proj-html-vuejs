@@ -119,6 +119,12 @@ export default {
       padding: .55rem;
       text-align: center;
       @include dflex-center;
+      cursor: pointer;
+      transition: transform 450ms ease;
+
+      &:hover{
+        transform: scale(1.1);
+      }
     }
     .shop{
       background-color: $bg-color-white;
@@ -126,6 +132,13 @@ export default {
       text-align: center;
       padding: .75rem .55rem;
       @include dflex-center;
+      cursor: pointer;
+      transition: transform 450ms ease;
+
+      
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
 </style>
