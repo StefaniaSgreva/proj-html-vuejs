@@ -1,27 +1,30 @@
 <template>
     <section id="hero">
+        <button class="handle left-handle" @click="prev()"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="hero-container debug">
-            <button class="handle left-handle" @click="scrollLeft()"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="carousel" ref="scroll" v-for="(slide, index) in slides" :key="index" 
-                :current-slide="currentSlide" :index="index">
-                <div class="carousel-item"  v-show="currentSlide === index">
-                    <div class="text">
-                        <h1>{{slide.title1}}<br>{{slide.title2}} <span class="font-italic">{{slide.titleItalic}}</span></h1>
-                        <p>{{slide.text}}</p>
-                        <button class="btn">Read More</button>
+                :current-slide="currentSlide" :index="index" :direction="direction">
+                <transition :name="transitionEffect">
+                    <div class="carousel-item"  v-show="currentSlide === index">
+                        <div class="text">
+                            <h1>{{slide.title1}}<br>{{slide.title2}} <span class="font-italic">{{slide.titleItalic}}</span></h1>
+                            <p>{{slide.text}}</p>
+                            <button class="btn">Read More</button>
+                        </div>
+                        <div class="img">
+                            <img :src="slide.image" alt="hero slide">
+                        </div>
                     </div>
-                    <div class="img">
-                        <img :src="slide.image" alt="hero slide">
-                    </div>
-                </div>
+                </transition>
             </div>
             <div class="dots">
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
-            <button class="handle right-handle" @click="scrollRight()"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
+        <button class="handle right-handle" @click="next()"><i class="fa-solid fa-chevron-right"></i></button>
+
     </section>
 </template>
 
@@ -31,6 +34,7 @@
         data(){
             return{
                 currentSlide: 0,
+                slideInterval: null,
                 slides:[
                     {
                         image: '/img/Hero-imh-1.png',
@@ -53,20 +57,40 @@
                         titleItalic: 'joy',
                         text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
                     }
-                ]
+                ],
+                direction: "right"
             }
         },
         methods:{
-            scrollLeft(){
-                this.$refs['scroll'].scrollLeft -= 1000;
+            setCurrentSlide(index){
+
+                this.currentSlide = index;
             },
-            scrollRight() {
-                this.$refs['scroll'].scrollLeft += 1000;
+            prev(){
+                const index = this.currentSlide > 0 ? this.currentSlide - 1 : this.slides.length -1;
+                this.setCurrentSlide(index);
+                this.direction = "left";
+            },
+            next(){
+                const index = this.currentSlide < this.slides.length -1 ? this.currentSlide + 1 :0;
+                this.setCurrentSlide(index);
+                this.direction = "right";
             }
+          
 
         },
+        computed:{
+            transitionEffect(){
+                return this.direction === "right" ? "slide-out" : "slide-in";
+            }
+        },
         mounted(){
-            
+            // this.slideInterval = setInterval(()=>{
+            //     this.next();
+            // }, 3000)
+        },
+        beforeUnmount(){
+            clearInterval(this.slideInterval);
         }
     }
 </script>
@@ -76,11 +100,14 @@
 @use '../assets/styles/partials/mixins' as *;
 
 #hero{
-    margin: 2rem 0;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .hero-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
     width: 90%;
@@ -196,6 +223,24 @@
         margin-right: 1.5rem;
         cursor: pointer;
     }
+}
+.slide-in-enter-active,
+.slide-in-leave-active,
+.slide-out-enter-active,
+.slide-out-leave-active{
+    transition: all 1s ease-in-out;
+}
+.slide-in-enter-from{
+    transform: translateX(-100%);
+}
+.slide-in-leave-to{
+    transform: translateX(100%);
+}
+.slide-out-enter-from{
+    transform: translateX(100%);
+}
+.slide-out-leave-to{
+    transform: translateX(-100%);
 }
 
     
