@@ -59,18 +59,22 @@ const footerMenu = [
 ];
 const process = [
     {
+        img: "/img/process-1png.png",
         title: "First there is an idea",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
+        img: "/img/process-2png.png",
         title: "Then we talk about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
+        img: "/img/process-3png.png",
         title: "And we think about",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     },
     {
+        img: "/img/process-4png.png",
         title: "So we draw along",
         text: "Lorem ipsum dolor sit, conetu adipisc sed be et ore aliqua pleasure itself.",
     }

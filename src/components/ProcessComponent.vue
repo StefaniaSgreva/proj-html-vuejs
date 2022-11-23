@@ -1,6 +1,6 @@
 <template>
     <div class="col">
-        <div class="img"></div>
+        <img :src="obj.img" alt="">
         <h3>{{obj.title}}</h3>
         <p>{{obj.text}}</p>
     </div>
@@ -21,11 +21,7 @@
     flex-basis: calc(100% / 4);
     padding: 2rem .25rem;
 
-        .img{
-            background-color: aqua;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+        img{
             margin: 1.5rem auto;
         }
         

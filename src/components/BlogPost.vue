@@ -6,7 +6,7 @@
             <div class="year">May ' 19'</div>
         </div>
         <!-- <img :src="getImageURL(`h-2-blog-img-1.jpg`)" alt="blog post image"> -->
-        <div class="blog-img-cont debug">
+        <div class="blog-img-cont">
              <img :src="obj.img" alt="blog post image">
         </div>
         <h4><span>{{obj.title}}</span></h4>
@@ -45,11 +45,6 @@
                 top: -1rem;
                 left: 1.8rem;
                 z-index: 1;
-
-                img{
-                    // margin-top: 5rem;
-                    z-index: -1;
-                }
                 .day{
                     font-size: 2rem;
                     text-align: center;
