@@ -1,15 +1,16 @@
 <template>
     <section id="hero">
         <button class="handle left-handle" @click="prev()"><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="hero-container debug">
+        <div class="hero-container">
             <div class="carousel" ref="scroll" v-for="(slide, index) in slides" :key="index" 
-                :current-slide="currentSlide" :index="index" :direction="direction">
+                :current-slide="currentSlide" :index="index" :direction="direction"
+                @mouseenter="stopSlideTimer" @mouseout="startsSlideTimer">
                 <transition :name="transitionEffect">
                     <div class="carousel-item"  v-show="currentSlide === index">
                         <div class="text">
                             <h1>{{slide.title1}}<br>{{slide.title2}} <span class="font-italic">{{slide.titleItalic}}</span></h1>
                             <p>{{slide.text}}</p>
-                            <button class="btn">Read More</button>
+                        <button class="btn prova">Read More</button>
                         </div>
                         <div class="img">
                             <img :src="slide.image" alt="hero slide">
@@ -17,10 +18,15 @@
                     </div>
                 </transition>
             </div>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+            
+            <!-- <div class="btn-position" >
+                <button class="btn prova">Read More</button>
+            </div> -->
+            
+            <div class="carousel-indicators">
+                <button class="carousel-indicator-item" 
+                v-for="(item,index) in slides.length" :key="index"
+                :class="{active: currentSlide === index}" @click="switchSlide(index)"></button>
             </div>
         </div>
         <button class="handle right-handle" @click="next()"><i class="fa-solid fa-chevron-right"></i></button>
@@ -58,7 +64,8 @@
                         text: 'Neque porro quisquam est, qui dolorem ipsum quoia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi'
                     }
                 ],
-                direction: "right"
+                direction: "right",
+                
             }
         },
         methods:{
@@ -66,15 +73,40 @@
 
                 this.currentSlide = index;
             },
-            prev(){
-                const index = this.currentSlide > 0 ? this.currentSlide - 1 : this.slides.length -1;
+            prev(step = -1){
+                const index = this.currentSlide > 0 ? this.currentSlide + step : this.slides.length -1;
                 this.setCurrentSlide(index);
                 this.direction = "left";
+                this.startsSlideTimer();
             },
-            next(){
-                const index = this.currentSlide < this.slides.length -1 ? this.currentSlide + 1 :0;
+            _next(step = 1){
+                const index =
+                this.currentSlide < this.slides.length - 1 ? this.currentSlide + step : 0;
                 this.setCurrentSlide(index);
                 this.direction = "right";
+            },
+            next(step = 1){
+                this._next(step);
+                this.startsSlideTimer();
+            },
+            startsSlideTimer(){
+                this.stopSlideTimer();
+                this.slideInterval = setInterval(()=>{
+
+                    this._next();
+
+                }, 5000);
+            },
+            stopSlideTimer(){
+                clearInterval(this.slideInterval);
+            },
+            switchSlide(index){
+                const step = index - this.currentSlide;
+                if(step > 0){
+                    this.next(step);
+                }else{
+                    this.prev(step);
+                }
             }
           
 
@@ -85,12 +117,10 @@
             }
         },
         mounted(){
-            // this.slideInterval = setInterval(()=>{
-            //     this.next();
-            // }, 3000)
+            this.startsSlideTimer();
         },
         beforeUnmount(){
-            clearInterval(this.slideInterval);
+            this.stopSlideTimer();
         }
     }
 </script>
@@ -134,7 +164,7 @@
 
             .text{
                 width: 50%;
-                border: 2px solid green;
+                // border: 2px solid green;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -154,45 +184,12 @@
                         font-size: 1.2rem;
                         max-width: 580px;
                     }
-                    button{
-                        margin-top: .55rem;
-                        padding: 1.25rem 2.2rem;
-                        background-color: transparent;
-                        border: 3px solid $border-color-pink;
-                        cursor: pointer;
-                        position: relative;
-                        font-size: .85rem;
-
-                        &:hover{
-                            color: $color-white;
-                        }
-
-                    }
-                    button::after{
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: $border-color-pink;
-                        transform: scaleX(0);
-                        transform-origin: right;
-                        transition: transform 200ms ease-in;
-                        z-index: -1;
-
-
-                    }
-                    button:hover::after{
-                        transform: scaleX(1);
-                        transform-origin: left;
-
-                    }
+                    
             }
 
             .img{
                 width: 50%;
-                border: 2px solid blue;
+                // border: 2px solid blue;
                 height: 100%;
                 display: flex;
                 justify-content: center;
@@ -210,19 +207,24 @@
 .handle{
     cursor: pointer;
 }
-.dots{
+.carousel-indicators{
     position: absolute;
     bottom: 0;
     left: 47%;
-    display: flex;
-    .dot{
-        width: 10px;
-        height: 10px;
+
+    .carousel-indicator-item{
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background-color: $bg-color-pink;
-        margin-right: 1.5rem;
+        border: none;
+        margin: .45rem;
         cursor: pointer;
     }
+    .active{
+        background-color: $bg-color-mint;
+    }
+
 }
 .slide-in-enter-active,
 .slide-in-leave-active,
@@ -242,7 +244,45 @@
 .slide-out-leave-to{
     transform: translateX(-100%);
 }
+.btn-position{
+    position: absolute;
+    left: 0;
+    bottom: 4rem;
+}
+.prova{
+    margin-top: .55rem;
+    padding: 1.25rem 2.2rem;
+    background-color: transparent;
+    border: 3px solid $border-color-pink;
+    cursor: pointer;
+    position: relative;
+    font-size: .85rem;
 
+    &:hover{
+        color: $color-white;
+    }
+
+}
+.prova::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $border-color-pink;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in;
+    z-index: -1;
+
+
+}
+.prova:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
     
 
 </style>
