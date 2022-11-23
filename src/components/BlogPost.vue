@@ -6,7 +6,7 @@
             <div class="year">May ' 19'</div>
         </div>
         <!-- <img :src="getImageURL(`h-2-blog-img-1.jpg`)" alt="blog post image"> -->
-        <div class="blog-img-cont">
+        <div class="blog-img-cont debug">
              <img :src="obj.img" alt="blog post image">
         </div>
         <h4><span>{{obj.title}}</span></h4>
@@ -65,20 +65,19 @@
             }
             .blog-img-cont{
                 overflow: hidden;
-                height: 300px;
-
-
+               
                 img{
                     transition: transform 450ms ease;
+                    transform: scale(1.05);
                 }
 
                 img:hover{
-                    transform: scale(1.05);
+                    transform: scale(1.1);
                 }
             }
 
             h4{
-                max-width: 100%;
+                max-width: 500px;
                 font-size: 1.5rem;
                 font-weight: 400;
                 margin: 1rem 0;
