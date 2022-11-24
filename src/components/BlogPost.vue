@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="date">
-            <img src="../assets/images/bandierina.png" alt="decorative flag">
+            <img src="../assets/images/flag-color-2.png" alt="decorative flag">
             <div class="day font-italic">07</div>
             <div class="year">May ' 19'</div>
         </div>
