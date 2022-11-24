@@ -64,6 +64,7 @@
                 img{
                     transition: transform 450ms ease;
                     transform: scale(1.05);
+                    cursor: pointer;
                 }
 
                 img:hover{
